@@ -64,7 +64,7 @@ function createEnemies($container) {
 //crear enemigo
 function createEnemy($container, x, y){
   const $enemy = document.createElement("img");
-  $enemy.src = "./assets/images/ufo.png";
+  $enemy.src = "./assets/images/ufo2.png";
   $enemy.className = "enemy";
   $container.appendChild($enemy);
   const enemy_cooldown = Math.floor(Math.random()*100);
@@ -79,7 +79,7 @@ function createEnemy($container, x, y){
 //crear laser del jugador
 function createLaser($container, x, y){
   const $laser = document.createElement("img");
-  $laser.src = "img/laser.png";
+  $laser.src = "assets/images/laser.png";
   $laser.className = "laser";
   $container.appendChild($laser);
   const laser = {x, y, $laser};
@@ -110,7 +110,7 @@ function updatePlayer(){
 ////// CREAR LASER DEL ENEMIGO //////
 function createEnemyLaser($container, x, y){
   const $enemyLaser = document.createElement("img");
-  $enemyLaser.src = "img/enemyLaser.png";
+  $enemyLaser.src = "assets/images/enemyLaser.png";
   $enemyLaser.className = "enemyLaser";
   $container.appendChild($enemyLaser);
   const enemyLaser = {x, y, $enemyLaser};
