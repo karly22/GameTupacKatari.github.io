@@ -73,4 +73,17 @@ function createEnemy($container, x, y){
   setSize($enemy, STATE.enemy_width);
   setPosition($enemy, x, y)
 }
+
+
+
+
+function createLaser($container, x, y){
+  const $laser = document.createElement("img");
+  $laser.src = "img/laser.png";
+  $laser.className = "laser";
+  $container.appendChild($laser);
+  const laser = {x, y, $laser};
+  STATE.lasers.push(laser);
+  setPosition($laser, x, y);
+}
   
