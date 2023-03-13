@@ -76,7 +76,7 @@ function createEnemy($container, x, y){
 
 
 
-
+//crear laser del jugador
 function createLaser($container, x, y){
   const $laser = document.createElement("img");
   $laser.src = "img/laser.png";
@@ -85,5 +85,22 @@ function createLaser($container, x, y){
   const laser = {x, y, $laser};
   STATE.lasers.push(laser);
   setPosition($laser, x, y);
+}
+
+//actualizar jugador
+function updatePlayer(){
+  if(STATE.move_left){
+    STATE.x_pos -= 3;
+  } if(STATE.move_right){
+    STATE.x_pos += 3;
+  } if(STATE.shoot && STATE.cooldown == 0){
+    createLaser($container, STATE.x_pos - STATE.spaceship_width/2, STATE.y_pos);
+    STATE.cooldown = 30;
+  }
+  const $player = document.querySelector(".player");
+  setPosition($player, bound(STATE.x_pos), STATE.y_pos-10);
+  if(STATE.cooldown > 0){
+    STATE.cooldown -= 0.5;
+  }
 }
   
