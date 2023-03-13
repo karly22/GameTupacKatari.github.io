@@ -29,7 +29,7 @@ function createPlayer($container) {
     STATE.x_pos = GAME_WIDTH / 2;
     STATE.y_pos = GAME_HEIGHT - 50;
     const $player = document.createElement("img");
-    $player.src = "img/spaceship.png";
+    $player.src = "images/spaceship.png";
     $player.className = "player";
     $container.appendChild($player);
     setPosition($player, STATE.x_pos, STATE.y_pos);
@@ -60,5 +60,17 @@ function createEnemies($container) {
     createEnemy($container, i*80, 180);
   }
 }
-  
+ 
+// crear enemigo
+function createEnemy($container, x, y){
+  const $enemy = document.createElement("img");
+  $enemy.src = "images/ufo.png";
+  $enemy.className = "enemy";
+  $container.appendChild($enemy);
+  const enemy_cooldown = Math.floor(Math.random()*100);
+  const enemy = {x, y, $enemy, enemy_cooldown}
+  STATE.enemies.push(enemy);
+  setSize($enemy, STATE.enemy_width);
+  setPosition($enemy, x, y)
+}
   
