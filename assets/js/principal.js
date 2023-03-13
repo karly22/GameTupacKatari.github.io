@@ -253,4 +253,8 @@ function update(){
   }
 }
 
+window.addEventListener("keydown", KeyPress);
+window.addEventListener("keyup", KeyRelease);
+update();
+
 
