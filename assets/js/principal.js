@@ -236,3 +236,21 @@ function KeyRelease(event) {
 }
 
 
+//principal actualizacion
+
+function update(){
+  updatePlayer();
+  updateEnemies($container);
+  updateLaser($container);
+  updateEnemyLaser($container);
+
+  window.requestAnimationFrame(update);
+  
+  if (STATE.gameOver) {
+    document.querySelector(".lose").style.display = "block";
+  } if (STATE.enemies.length == 0) {
+    document.querySelector(".win").style.display = "block";
+  }
+}
+
+
