@@ -197,3 +197,19 @@ function updateEnemyLaser($container){
     setPosition(enemyLaser.$enemyLaser, enemyLaser.x + STATE.enemy_width/2, enemyLaser.y+15);
   }
 }
+
+FUNCION UPDATE
+//funcion de movimiento
+function bound(x){
+  if (x >= GAME_WIDTH-STATE.spaceship_width){
+    STATE.x_pos = GAME_WIDTH-STATE.spaceship_width;
+    return GAME_WIDTH-STATE.spaceship_width
+  } if (x <= 0){
+    STATE.x_pos = 0;
+    return 0
+  } else {
+    return x;
+  }
+}
+
+
