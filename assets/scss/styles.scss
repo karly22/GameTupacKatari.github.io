@@ -33,7 +33,7 @@ li{
 main{
     display: flex;
     justify-content: space-around;
-    padding: 2.5rem 2rem 0 2rem;
+    padding: 1.2rem 2rem 0 2rem;
 }
 
 
@@ -91,13 +91,15 @@ a{
     color: #6b1818;
 }
 footer{
-    margin-top: 2rem;
+    padding: 2rem 0;
 }
 
 .footer-icon{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    
+    bottom: 0;
 }
 i{
     color: white;
@@ -109,3 +111,63 @@ p{
     color: white;
 }
 
+.icon-game{
+    font-size: 30px;
+}
+.icon-game:hover{
+    color: rgb(0, 106, 255);
+}
+
+button:hover{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,84,1) 0%, rgba(59,137,255,1) 85%);
+    color: white;
+}
+a:hover{
+    color: white;
+}
+
+@media (max-width: 825px) {
+    body {
+      background: rgba(136, 15, 15, 0.563);
+    }
+    header{
+        border-radius: 1rem;
+    }
+    main{
+        flex-direction: column;
+        padding: 0;
+        justify-content: space-between;
+    }
+    .satelite{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 200px;
+        height: 250px;
+    }
+    form{
+        gap: .5rem;
+        padding: 0;
+    }
+    label{
+        font-size: 24px;
+    }
+    .register{
+        margin-top: 2rem;
+    }
+    button{
+        margin-top: 2rem;
+    }
+    a{
+        font-size: 22px;
+    }
+    .icon-game{
+        font-size: 20px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+  }
