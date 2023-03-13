@@ -213,3 +213,15 @@ function bound(x){
 }
 
 
+// pulsar tecla
+function KeyPress(event) {
+  if (event.keyCode === KEY_RIGHT) {
+    STATE.move_right = true;
+  } else if (event.keyCode === KEY_LEFT) {
+    STATE.move_left = true;
+  } else if (event.keyCode === KEY_SPACE) {
+    STATE.shoot = true;
+  }
+}
+
+
