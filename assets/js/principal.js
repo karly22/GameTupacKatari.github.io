@@ -198,7 +198,7 @@ function updateEnemyLaser($container){
   }
 }
 
-FUNCION UPDATE
+
 //funcion de movimiento
 function bound(x){
   if (x >= GAME_WIDTH-STATE.spaceship_width){
