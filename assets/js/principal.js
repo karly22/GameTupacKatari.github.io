@@ -224,4 +224,15 @@ function KeyPress(event) {
   }
 }
 
+//soltar tecla
+function KeyRelease(event) {
+  if (event.keyCode === KEY_RIGHT) {
+    STATE.move_right = false;
+  } else if (event.keyCode === KEY_LEFT) {
+    STATE.move_left = false;
+  } else if (event.keyCode === KEY_SPACE) {
+    STATE.shoot = false;
+  }
+}
+
 
