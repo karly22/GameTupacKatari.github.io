@@ -24,4 +24,16 @@ const STATE = {
     enemy_cooldown : 0,// enfriamiento
     gameOver: false//fin del juego
   }
+  //crear jugador
+  function createPlayer($container) {
+    STATE.x_pos = GAME_WIDTH / 2;
+    STATE.y_pos = GAME_HEIGHT - 50;
+    const $player = document.createElement("img");
+    $player.src = "img/spaceship.png";
+    $player.className = "player";
+    $container.appendChild($player);
+    setPosition($player, STATE.x_pos, STATE.y_pos);
+    setSize($player, STATE.spaceship_width);
+  }
+  
   
