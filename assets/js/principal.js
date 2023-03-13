@@ -46,5 +46,19 @@ function setSize($element, width) {
     $element.style.width = `${width}px`;
     $element.style.height = "auto";
   }
+
+  // Initialize the Game
+const $container = document.querySelector(".main");
+createPlayer($container);//#1 CREAR JUGADOR
+createEnemies($container);
+
+//inicializar juego
+function createEnemies($container) {
+  for(var i = 0; i <= STATE.number_of_enemies/2; i++){
+    createEnemy($container, i*80, 100);
+  } for(var i = 0; i <= STATE.number_of_enemies/2; i++){
+    createEnemy($container, i*80, 180);
+  }
+}
   
   
