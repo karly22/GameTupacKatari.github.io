@@ -117,4 +117,24 @@ function createEnemyLaser($container, x, y){
   STATE.enemyLasers.push(enemyLaser);
   setPosition($enemyLaser, x, y);
 }
+
+
+//crear actualizacion de enemigos
+function updateEnemies($container){
+  const dx = Math.sin(Date.now()/1000)*40;
+  const dy = Math.cos(Date.now()/1000)*30;
+  const enemies = STATE.enemies;
+  for (let i = 0; i < enemies.length; i++){
+    const enemy = enemies[i];
+    var a = enemy.x + dx;
+    var b = enemy.y + dy;
+    setPosition(enemy.$enemy, a, b);
+    enemy.cooldown = Math.random(0,100);
+    if (enemy.enemy_cooldown == 0){
+      createEnemyLaser($container, a, b);
+      enemy.enemy_cooldown = Math.floor(Math.random()*50)+100 ;
+    }
+    enemy.enemy_cooldown -= 0.5;
+  }
+}
   
