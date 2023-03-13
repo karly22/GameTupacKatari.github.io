@@ -154,3 +154,28 @@ function collideRect(rect1, rect2){
     rect2.top > rect1.bottom || 
     rect2.bottom < rect1.top);
 }
+
+
+function updateLaser($container){
+  const lasers = STATE.lasers;
+  for(let i = 0; i < lasers.length; i++){
+    const laser = lasers[i];
+    laser.y -= 2;
+    if (laser.y < 0){
+      deleteLaser(lasers, laser, laser.$laser);
+    }
+    setPosition(laser.$laser, laser.x, laser.y);
+    const laser_rectangle = laser.$laser.getBoundingClientRect();
+    const enemies = STATE.enemies;
+    for(let j = 0; j < enemies.length; j++){
+      const enemy = enemies[j];
+      const enemy_rectangle = enemy.$enemy.getBoundingClientRect();
+      if(collideRect(enemy_rectangle, laser_rectangle)){
+        deleteLaser(lasers, laser, laser.$laser);
+        const index = enemies.indexOf(enemy);
+        enemies.splice(index,1);
+        $container.removeChild(enemy.$enemy);
+      }
+    }
+  }
+}
