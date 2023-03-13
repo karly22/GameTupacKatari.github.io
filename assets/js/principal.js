@@ -17,8 +17,8 @@ const STATE = {
     lasers: [],//balas
     enemyLasers: [],//disparos de los enemigos
     enemies : [],//
-    spaceship_width: 50,//nave espacial
-    enemy_width: 50,//ancho del enemigo
+    spaceship_width: 60,//nave espacial
+    enemy_width: 80,//ancho del enemigo
     cooldown : 0,//enfriamiento
     number_of_enemies: 16,//numero de enemigos
     enemy_cooldown : 0,// enfriamiento
