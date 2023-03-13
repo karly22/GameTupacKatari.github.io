@@ -179,3 +179,21 @@ function updateLaser($container){
     }
   }
 }
+
+//actualizar enemigo
+function updateEnemyLaser($container){
+  const enemyLasers = STATE.enemyLasers;
+  for(let i = 0; i < enemyLasers.length; i++){
+    const enemyLaser = enemyLasers[i];
+    enemyLaser.y += 2;
+    if (enemyLaser.y > GAME_HEIGHT-30){
+      deleteLaser(enemyLasers, enemyLaser, enemyLaser.$enemyLaser);
+    }
+    const enemyLaser_rectangle = enemyLaser.$enemyLaser.getBoundingClientRect();
+    const spaceship_rectangle = document.querySelector(".player").getBoundingClientRect();
+    if(collideRect(spaceship_rectangle, enemyLaser_rectangle)){
+      STATE.gameOver = true;
+    }
+    setPosition(enemyLaser.$enemyLaser, enemyLaser.x + STATE.enemy_width/2, enemyLaser.y+15);
+  }
+}
