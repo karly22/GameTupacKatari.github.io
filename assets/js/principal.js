@@ -137,4 +137,11 @@ function updateEnemies($container){
     enemy.enemy_cooldown -= 0.5;
   }
 }
+
+// eliminar laser
+function deleteLaser(lasers, laser, $laser){
+  const index = lasers.indexOf(laser);
+  lasers.splice(index,1);
+  $container.removeChild($laser);
+}
   
