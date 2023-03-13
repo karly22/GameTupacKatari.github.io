@@ -103,4 +103,18 @@ function updatePlayer(){
     STATE.cooldown -= 0.5;
   }
 }
+
+
+
+
+////// CREAR LASER DEL ENEMIGO //////
+function createEnemyLaser($container, x, y){
+  const $enemyLaser = document.createElement("img");
+  $enemyLaser.src = "img/enemyLaser.png";
+  $enemyLaser.className = "enemyLaser";
+  $container.appendChild($enemyLaser);
+  const enemyLaser = {x, y, $enemyLaser};
+  STATE.enemyLasers.push(enemyLaser);
+  setPosition($enemyLaser, x, y);
+}
   
