@@ -25,7 +25,7 @@ const STATE = {
     gameOver: false//fin del juego
   }
   //crear jugador
-  function createPlayer($container) {
+function createPlayer($container) {
     STATE.x_pos = GAME_WIDTH / 2;
     STATE.y_pos = GAME_HEIGHT - 50;
     const $player = document.createElement("img");
@@ -34,6 +34,17 @@ const STATE = {
     $container.appendChild($player);
     setPosition($player, STATE.x_pos, STATE.y_pos);
     setSize($player, STATE.spaceship_width);
+  }
+  
+  //posicion de ajuste
+function setPosition($element, x, y) {
+    $element.style.transform = `translate(${x}px, ${y}px)`;
+  }
+  
+  //establecer tamano
+function setSize($element, width) {
+    $element.style.width = `${width}px`;
+    $element.style.height = "auto";
   }
   
   
