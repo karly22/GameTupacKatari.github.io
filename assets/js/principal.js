@@ -61,10 +61,10 @@ function createEnemies($container) {
   }
 }
  
-/* crear enemigo
+//crear enemigo
 function createEnemy($container, x, y){
   const $enemy = document.createElement("img");
-  $enemy.src = "images/ufo.png";
+  $enemy.src = "./assets/images/ufo.png";
   $enemy.className = "enemy";
   $container.appendChild($enemy);
   const enemy_cooldown = Math.floor(Math.random()*100);
@@ -72,5 +72,5 @@ function createEnemy($container, x, y){
   STATE.enemies.push(enemy);
   setSize($enemy, STATE.enemy_width);
   setPosition($enemy, x, y)
-}*/
+}
   
